@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -16,7 +16,10 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [isListening, setIsListening] = useState(false);
+  const [generatedOtp, setGeneratedOtp] = useState('');
   const { toast } = useToast();
+
+  const generateOtp = () => Math.floor(100000 + Math.random() * 900000).toString();
 
   const toggleVoiceInput = () => {
     setIsListening(!isListening);
@@ -33,7 +36,7 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
     }
   };
 
-  const handleGetOtp = () => {
+  const handleGetOtp = async () => {
     if (phone.length !== 10) {
       toast({
         title: "Invalid phone number",
@@ -42,16 +45,35 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
       });
       return;
     }
-    
-    setIsOtpSent(true);
-    toast({
-      title: "OTP Sent!",
-      description: `Verification code sent to +91 ${phone}. Use 1234 for demo.`
-    });
+
+    const otpCode = generateOtp();
+    setGeneratedOtp(otpCode);
+
+    try {
+      await axios.post('http://localhost:8000/api/send-sms', {
+        phone,
+        code: otpCode,
+      });
+
+      setIsOtpSent(true);
+      toast({
+        title: "OTP Sent!",
+        description: `Verification code sent to +91 ${phone}. (Demo: ${otpCode})`
+      });
+
+      console.log('OTP sent:', otpCode);
+    } catch (error) {
+      toast({
+        title: "Failed to send OTP",
+        description: "Please try again later",
+        variant: "destructive"
+      });
+      console.error('Error sending OTP:', error);
+    }
   };
 
   const handleVerifyOtp = () => {
-    if (otp === '1234') {
+    if (otp === generatedOtp) {
       toast({
         title: "Verification successful!",
         description: "Welcome to your financial dashboard"
@@ -60,7 +82,7 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
     } else {
       toast({
         title: "Invalid OTP",
-        description: "Please enter the correct verification code (1234 for demo)",
+        description: "Please enter the correct 6-digit code",
         variant: "destructive"
       });
     }
@@ -75,7 +97,7 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">Welcome</h1>
           <p className="text-gray-300">
-            {isOtpSent 
+            {isOtpSent
               ? 'Enter the verification code sent to your phone'
               : 'Enter your phone number to get started'
             }
@@ -117,7 +139,7 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
           <div className="space-y-6">
             <Input
               type="text"
-              placeholder="Enter 6-digit OTP (use 1234 for demo)"
+              placeholder="Enter 6-digit OTP"
               value={otp}
               onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
               className="bg-gray-800 border-gray-600 text-white placeholder-gray-400 text-center text-xl tracking-widest"
@@ -135,7 +157,7 @@ const ContactSignup: React.FC<ContactSignupProps> = ({ onSignupComplete }) => {
               <Button
                 onClick={handleVerifyOtp}
                 className="flex-1 bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-medium transition-all duration-300 hover:scale-105"
-                disabled={otp.length < 4}
+                disabled={otp.length !== 6}
               >
                 Verify
               </Button>
