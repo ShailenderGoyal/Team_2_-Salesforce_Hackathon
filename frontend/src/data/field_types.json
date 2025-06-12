@@ -1,0 +1,203 @@
+
+{
+  "onboarding_steps": [
+    {
+      "id": "personal_info",
+      "title": "Personal Information",
+      "fields": [
+        {
+          "id": "age",
+          "label": "Age in years",
+          "type": "numerical",
+          "voice_prompt": "What is your age?",
+          "placeholder": "Enter your age",
+          "required": true
+        },
+        {
+          "id": "dependents",
+          "label": "Number of dependents",
+          "type": "numerical",
+          "voice_prompt": "How many dependents do you have?",
+          "placeholder": "Enter number of dependents",
+          "required": true
+        },
+        {
+          "id": "marital_status",
+          "label": "Marital status",
+          "type": "categorical",
+          "voice_prompt": "What is your marital status?",
+          "options": ["Single", "Married", "Divorced", "Widowed"],
+          "required": true
+        },
+        {
+          "id": "residential_stability",
+          "label": "Residential stability score (1-10)",
+          "type": "numerical",
+          "voice_prompt": "How stable is your residence? Rate from 1 to 10",
+          "placeholder": "Rate from 1-10",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "financial_details",
+      "title": "Financial Details",
+      "fields": [
+        {
+          "id": "wallet_balance",
+          "label": "Average mobile wallet balance",
+          "type": "numerical",
+          "voice_prompt": "What is your average mobile wallet balance?",
+          "placeholder": "Enter average wallet balance",
+          "required": true
+        },
+        {
+          "id": "land_holdings",
+          "label": "Land holdings in acres",
+          "type": "numerical",
+          "voice_prompt": "How many acres of land do you own?",
+          "placeholder": "Enter land holdings in acres",
+          "required": false
+        },
+        {
+          "id": "gold_value",
+          "label": "Gold holding value",
+          "type": "numerical",
+          "voice_prompt": "What is the value of your gold holdings?",
+          "placeholder": "Enter gold value",
+          "required": false
+        },
+        {
+          "id": "two_wheelers",
+          "label": "Number of two wheelers",
+          "type": "numerical",
+          "voice_prompt": "How many two wheelers do you own?",
+          "placeholder": "Enter number of two wheelers",
+          "required": false
+        },
+        {
+          "id": "four_wheelers",
+          "label": "Number of four wheelers",
+          "type": "numerical",
+          "voice_prompt": "How many four wheelers do you own?",
+          "placeholder": "Enter number of four wheelers",
+          "required": false
+        },
+        {
+          "id": "health_insurance",
+          "label": "Health insurance coverage",
+          "type": "categorical",
+          "voice_prompt": "Do you have health insurance coverage?",
+          "options": ["Yes", "No", "Partial"],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "income_sources",
+      "title": "Income Sources",
+      "fields": [
+        {
+          "id": "upi_frequency",
+          "label": "UPI transaction frequency",
+          "type": "numerical",
+          "voice_prompt": "How many UPI transactions do you make per month?",
+          "placeholder": "Enter monthly UPI transactions",
+          "required": true
+        },
+        {
+          "id": "app_usage",
+          "label": "App usage hours per week",
+          "type": "numerical",
+          "voice_prompt": "How many hours per week do you use financial apps?",
+          "placeholder": "Enter weekly app usage hours",
+          "required": true
+        },
+        {
+          "id": "livestock",
+          "label": "Number of livestock owned",
+          "type": "numerical",
+          "voice_prompt": "How many livestock do you own?",
+          "placeholder": "Enter number of livestock",
+          "required": false
+        },
+        {
+          "id": "subsidy_regularity",
+          "label": "Subsidy inflow regularity (1-5)",
+          "type": "numerical",
+          "voice_prompt": "How regular are your subsidy inflows? Rate from 1 to 5",
+          "placeholder": "Rate from 1-5",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "expenses_spending",
+      "title": "Expenses & Spending",
+      "fields": [
+        {
+          "id": "call_frequency",
+          "label": "Call frequency per week",
+          "type": "numerical",
+          "voice_prompt": "How many calls do you make per week?",
+          "placeholder": "Enter weekly call frequency",
+          "required": true
+        },
+        {
+          "id": "call_duration",
+          "label": "Average call duration (minutes)",
+          "type": "numerical",
+          "voice_prompt": "What is your average call duration in minutes?",
+          "placeholder": "Enter average call duration",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "credit_history",
+      "title": "Credit History",
+      "fields": [
+        {
+          "id": "shg_repayment",
+          "label": "SHG repayment consistency (1-5)",
+          "type": "numerical",
+          "voice_prompt": "How consistent is your SHG repayment? Rate from 1 to 5",
+          "placeholder": "Rate from 1-5",
+          "required": true
+        },
+        {
+          "id": "peer_default",
+          "label": "Peer default influence (1-5)",
+          "type": "numerical",
+          "voice_prompt": "What is the peer default influence in your network? Rate from 1 to 5",
+          "placeholder": "Rate from 1-5",
+          "required": true
+        },
+        {
+          "id": "formal_loans",
+          "label": "Number of formal loans",
+          "type": "numerical",
+          "voice_prompt": "How many formal loans do you have?",
+          "placeholder": "Enter number of formal loans",
+          "required": true
+        },
+        {
+          "id": "informal_loans",
+          "label": "Number of informal loans",
+          "type": "numerical",
+          "voice_prompt": "How many informal loans do you have?",
+          "placeholder": "Enter number of informal loans",
+          "required": true
+        },
+        {
+          "id": "network_centrality",
+          "label": "Network centrality score (1-10)",
+          "type": "numerical",
+          "voice_prompt": "What is your network centrality score? Rate from 1 to 10",
+          "placeholder": "Rate from 1-10",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
