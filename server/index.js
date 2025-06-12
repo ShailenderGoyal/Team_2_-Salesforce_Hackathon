@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import aiRoutes from "./routes/ai.route.js";
 import connectMongodb from "./connection.js";
+import smsRoutes from './routes/sms.route.js';
 
 
 
@@ -29,6 +30,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use("/ai", aiRoutes);
+app.use('/api/', smsRoutes);
 app.get("/",(req, res) => {res.status(200).json({"message":"backend working"});});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
