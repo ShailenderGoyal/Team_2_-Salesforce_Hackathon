@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Saathi - आर्थिक सहायक</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #718096;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+
+        .language-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .lang-btn {
+            padding: 12px 16px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .lang-btn:hover {
+            background: #e6f3ff;
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .language-selected {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #234e52;
+            font-weight: 500;
+        }
+
+        .chat-container {
+            background: #f7fafc;
+            border-radius: 15px;
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .message.user {
+            background: #667eea;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .message.assistant {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .message.interim {
+            background: #fef5e7;
+            color: #975a16;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .text-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .text-input:focus {
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .voice-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .voice-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 28px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .start-call-btn {
+            background: #48bb78;
+            color: white;
+        }
+
+        .start-call-btn:hover {
+            background: #38a169;
+            transform: scale(1.1);
+        }
+
+        .end-call-btn {
+            background: #f56565;
+            color: white;
+            display: none;
+        }
+
+        .end-call-btn:hover {
+            background: #e53e3e;
+            transform: scale(1.1);
+        }
+
+        .listening-indicator {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #48bb78;
+            border-radius: 50%;
+            opacity: 0;
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-panel {
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .status {
+            margin: 0;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        
+        .status.error {
+            color: #e53e3e;
+            font-weight: bold;
+        }
+        
+        .status.listening {
+            color: #38a169;
+            animation: pulse-text 1.5s infinite;
+        }
+
+        .status.processing {
+            color: #3182ce;
+        }
+
+        .status.speaking {
+            color: #805ad5;
+        }
+
+        .debug-info {
+            background: #1a202c;
+            color: #e2e8f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            text-align: left;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .setup-info {
+            background: #fef5e7;
+            border: 2px solid #f6e05e;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .setup-info h3 {
+            color: #975a16;
+            margin-bottom: 10px;
+        }
+
+        .setup-info code {
+            background: #2d3748;
+            color: #f7fafc;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .voice-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Setup Instructions -->
+        <div class="setup-info" id="setup-info">
+            <h3>⚠️ Setup Required</h3>
+            <p><strong>Step 1:</strong> Replace <code>your-openai-api-key-here</code> in the script below with your actual OpenAI API key</p>
+            <p><strong>Step 2:</strong> The app will auto-detect your language and handle permissions</p>
+            <p><strong>Step 3:</strong> Start talking or typing in Hindi, Telugu, or any Indian language!</p>
+        </div>
+
+        <h1 id="main-title">🏦 Financial Saathi</h1>
+        <p class="subtitle" id="subtitle">आपका वित्तीय सहायक - Your Financial Assistant</p>
+
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="hi" onclick="assistant.selectLanguage('hi')">🇮🇳 हिंदी</button>
+            <button class="lang-btn" data-lang="te" onclick="assistant.selectLanguage('te')">🇮🇳 తెలుగు</button>
+            <button class="lang-btn" data-lang="ta" onclick="assistant.selectLanguage('ta')">🇮🇳 தமிழ்</button>
+            <button class="lang-btn" data-lang="en" onclick="assistant.selectLanguage('en')">🇺🇸 English</button>
+            <button class="lang-btn" data-lang="bn" onclick="assistant.selectLanguage('bn')">🇮🇳 বাংলা</button>
+            <button class="lang-btn" data-lang="gu" onclick="assistant.selectLanguage('gu')">🇮🇳 ગુજરાતી</button>
+        </div>
+
+        <!-- Selected Language Display -->
+        <div class="language-selected" id="language-display">
+            <span id="selected-lang-text">Selected: हिंदी / Hindi</span>
+        </div>
+
+        <!-- Status Panel -->
+        <div class="status-panel">
+            <p class="status" id="status">Initializing...</p>
+        </div>
+
+        <!-- Chat Interface -->
+        <div id="chat-container" class="chat-container">
+            <div class="message assistant">
+                नमस्ते! मैं आपका वित्तीय सहायक हूं। मैं बचत, बजट, क्रेडिट स्कोर के बारे में मदद कर सकता हूं। पहले ऊपर से अपनी भाषा चुनें, फिर टाइप करें या बोलें!
+                <br><br>
+                Hello! I'm your financial assistant. First select your language above, then you can type or speak your questions!
+            </div>
+        </div>
+
+        <!-- Text Input -->
+        <div class="input-section">
+            <input type="text" id="text-input" class="text-input" 
+                   placeholder="Type in Hindi, Telugu, English or any language..." >
+            <button class="btn btn-primary" id="send-btn">Send</button>
+        </div>
+
+        <!-- Voice Controls -->
+        <div class="voice-controls">
+            <button class="voice-btn start-call-btn" id="start-call-btn" title="बात करना शुरू करें / Start Voice Chat">
+                🎤
+                <div class="listening-indicator" id="listening-indicator"></div>
+            </button>
+            <button class="voice-btn end-call-btn" id="end-call-btn" title="बात खत्म करें / End Voice Chat">
+                📞
+            </button>
+        </div>
+
+        <!-- Debug Information -->
+        <div class="debug-info" id="debug-info">
+            <div>Debug Console:</div>
+            <div id="debug-content">App starting...</div>
+        </div>
+    </div>
+
+    <!-- Include the Financial Saathi JavaScript -->
+    <script src="financial-saathi.js"></script>
+    
+    <script>
+        // ========================================
+        // CONFIGURATION - REPLACE YOUR API KEY HERE!
+        // ========================================
+        
+        let assistant;
+
+        // Initialize the Financial Saathi Assistant
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Configuration
+                const config = {
+                    // GET YOUR FREE API KEY FROM: https://platform.openai.com/api-keys
+                    openaiApiKey: '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', // REPLACE THIS WITH YOUR ACTUAL API KEY
+                    defaultLanguage: 'hi', // Default to Hindi
+                    enableDebug: true, // Set to false in production
+                    maxConversationHistory: 6
+                };
+
+                // Check if API key is configured
+                if (config.openaiApiKey === 'your-openai-api-key-here') {
+                    showSetupWarning();
+                    return;
+                }
+
+                // Hide setup warning
+                hideSetupInfo();
+
+                // Create and initialize the assistant
+                assistant = new FinancialSaathi(config);
+                
+                // Define DOM element IDs (optional - uses defaults if not specified)
+                const elementIds = {
+                    chatContainer: 'chat-container',
+                    textInput: 'text-input',
+                    sendBtn: 'send-btn',
+                    startCallBtn: 'start-call-btn',
+                    endCallBtn: 'end-call-btn',
+                    statusElement: 'status',
+                    languageDisplay: 'language-display',
+                    selectedLangText: 'selected-lang-text',
+                    listeningIndicator: 'listening-indicator',
+                    debugInfo: 'debug-info',
+                    debugContent: 'debug-content'
+                };
+
+                // Initialize the assistant
+                const success = await assistant.init(elementIds);
+                
+                if (success) {
+                    console.log('Financial Saathi initialized successfully!');
+                    // Enable debug console in development
+                    document.getElementById('debug-info').style.display = 'block';
+                } else {
+                    console.error('Failed to initialize Financial Saathi');
+                }
+
+            } catch (error) {
+                console.error('Initialization error:', error);
+                document.getElementById('status').textContent = `Error: ${error.message}`;
+                document.getElementById('status').className = 'status error';
+            }
+        });
+
+        // Setup warning functions
+        function showSetupWarning() {
+            document.getElementById('setup-info').style.display = 'block';
+            document.getElementById('send-btn').disabled = true;
+            document.getElementById('start-call-btn').disabled = true;
+            document.getElementById('status').textContent = 'Setup required - please add your OpenAI API key';
+            document.getElementById('status').className = 'status error';
+        }
+
+        function hideSetupInfo() {
+            document.getElementById('setup-info').style.display = 'none';
+        }
+
+        // Optional: Add global error handler
+        window.addEventListener('error', function(event) {
+            console.error('Global error:', event.error);
+            if (assistant) {
+                assistant.logDebug(`Global error: ${event.error.message}`, 'ERROR');
+            }
+        });
+
+        // Optional: Add unload handler to cleanup
+        window.addEventListener('beforeunload', function() {
+            if (assistant) {
+                assistant.destroy();
+            }
+        });
+
+        // Optional: Expose assistant to global scope for debugging
+        window.assistant = assistant;
+    </script>
+</body>
+</html>
