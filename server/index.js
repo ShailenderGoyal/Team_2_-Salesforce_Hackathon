@@ -13,7 +13,7 @@ const PORT=process.env.PORT || 5000;
 const MONGO_URI=process.env.MONGO_URI;
 const corsOptions = {
     origin: (origin, callback) => {
-        const allowedOrigins = [process.env.CORS_ORIGIN ,'http://localhost:5173',"http://localhost:8080", 'http://127.0.0.1'];
+        const allowedOrigins = [process.env.CORS_ORIGIN ,'http://localhost:5173',"http://localhost:8080", "http://localhost:8081",'http://127.0.0.1'];
         if (allowedOrigins.includes(origin) || !origin) {
             // Allow no origin (when the request is made by the server itself, for example)
             callback(null, true);
