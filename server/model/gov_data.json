@@ -1,0 +1,938 @@
+{
+  "schemes": [
+    {
+      "id": "pmmy_mudra",
+      "name": "Pradhan Mantri MUDRA Yojana",
+      "category": "micro_finance",
+      "target_group": "micro_entrepreneurs",
+      "loan_range": "₹10,000 - ₹10,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": 500000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "8-12% (bank dependent)",
+      "url": "https://www.mudra.org.in",
+      "documents": ["Aadhaar", "PAN", "Business Plan", "Bank Statements"],
+      "benefits": ["No collateral", "Easy processing", "Government guarantee"],
+      "contact": "1800-180-1111"
+    },
+    {
+      "id": "stand_up_india",
+      "name": "Stand Up India",
+      "category": "entrepreneurship",
+      "target_group": "women_and_minorities",
+      "loan_range": "₹10,00,000 - ₹1,00,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 65
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "female",
+        "caste": ["sc", "st", "general"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["manufacturing", "service", "trading"],
+        "collateral_required": false,
+        "existing_loans": "not_allowed"
+      },
+      "interest_rate": "Base rate + 3% margin",
+      "url": "https://www.standupmitra.in",
+      "documents": ["Aadhaar", "PAN", "Caste Certificate", "Project Report"],
+      "benefits": ["Handholding support", "Credit guarantee", "Skill development"],
+      "contact": "1800-180-1111"
+    },
+    {
+      "id": "pm_jan_dhan",
+      "name": "Pradhan Mantri Jan Dhan Yojana",
+      "category": "banking",
+      "target_group": "unbanked_population",
+      "loan_range": "₹0 - ₹10,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 10,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["employed", "self_employed", "unemployed", "student"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "0% (savings account)",
+      "url": "https://www.pmjdy.gov.in",
+      "documents": ["Aadhaar", "Voter ID", "Driving License"],
+      "benefits": ["Zero balance account", "Accident insurance", "Life insurance"],
+      "contact": "1800-11-0001"
+    },
+    {
+      "id": "pm_kisan",
+      "name": "PM-KISAN",
+      "category": "agriculture",
+      "target_group": "farmers",
+      "loan_range": "₹6,000 per year",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "rural",
+          "states": ["all"]
+        },
+        "business_type": ["agriculture"],
+        "collateral_required": false,
+        "existing_loans": "allowed",
+        "land_ownership": true
+      },
+      "interest_rate": "N/A (direct benefit transfer)",
+      "url": "https://www.pmkisan.gov.in",
+      "documents": ["Aadhaar", "Land records", "Bank account details"],
+      "benefits": ["Direct cash transfer", "No repayment required", "Annual benefit"],
+      "contact": "155261"
+    },
+    {
+      "id": "ayushman_bharat",
+      "name": "Ayushman Bharat - PM-JAY",
+      "category": "health_insurance",
+      "target_group": "economically_weaker_sections",
+      "loan_range": "₹5,00,000 coverage",
+      "eligibility_criteria": {
+        "age": {
+          "min": 0,
+          "max": null
+        },
+        "income": {
+          "max_annual": 200000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["employed", "self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "Free (government funded)",
+      "url": "https://www.pmjay.gov.in",
+      "documents": ["Aadhaar", "Ration Card", "Income Certificate"],
+      "benefits": ["Cashless treatment", "Pre-existing conditions covered", "No premium"],
+      "contact": "14555"
+    },
+    {
+      "id": "mahila_udyam_nidhi",
+      "name": "Mahila Udyam Nidhi Scheme",
+      "category": "women_entrepreneurship",
+      "target_group": "women_entrepreneurs",
+      "loan_range": "₹10,000 - ₹1,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 45
+        },
+        "income": {
+          "max_annual": 300000,
+          "currency": "INR"
+        },
+        "gender": "female",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["manufacturing", "service", "trading"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "5-8% (subsidized)",
+      "url": "https://www.sidbi.in",
+      "documents": ["Aadhaar", "PAN", "Business Plan", "Income Proof"],
+      "benefits": ["Low interest rate", "No collateral", "Training support"],
+      "contact": "1800-022-4474"
+    },
+    {
+      "id": "kisan_credit_card",
+      "name": "Kisan Credit Card (KCC)",
+      "category": "agriculture",
+      "target_group": "farmers",
+      "loan_range": "₹3,00,000 - ₹3,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 75
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "rural",
+          "states": ["all"]
+        },
+        "business_type": ["agriculture"],
+        "collateral_required": false,
+        "existing_loans": "allowed",
+        "land_ownership": true
+      },
+      "interest_rate": "4% (with subsidy)",
+      "url": "https://www.nabard.org",
+      "documents": ["Aadhaar", "Land records", "Bank statements", "Crop details"],
+      "benefits": ["Flexible repayment", "Crop insurance", "Low interest"],
+      "contact": "1800-200-4415"
+    },
+    {
+      "id": "pm_svanidhi",
+      "name": "PM SVANidhi",
+      "category": "street_vendors",
+      "target_group": "street_vendors",
+      "loan_range": "₹10,000 - ₹50,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": 200000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "urban",
+          "states": ["all"]
+        },
+        "business_type": ["street_vending"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "7% (with subsidy)",
+      "url": "https://pmsvanidhi.mohua.gov.in",
+      "documents": ["Aadhaar", "Vending Certificate", "Bank account"],
+      "benefits": ["Digital payment incentive", "No collateral", "Quick processing"],
+      "contact": "1800-11-6446"
+    },
+    {
+      "id": "startup_india",
+      "name": "Startup India Seed Fund",
+      "category": "startup",
+      "target_group": "startups",
+      "loan_range": "₹20,00,000 - ₹50,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 21,
+          "max": 45
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["technology", "innovation"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "0% (equity/grant)",
+      "url": "https://www.startupindia.gov.in",
+      "documents": ["Aadhaar", "PAN", "Business Plan", "Incorporation Certificate"],
+      "benefits": ["Mentorship", "Tax exemption", "IPR support"],
+      "contact": "1800-115-565"
+    },
+    {
+      "id": "skill_india",
+      "name": "Pradhan Mantri Kaushal Vikas Yojana",
+      "category": "skill_development",
+      "target_group": "youth",
+      "loan_range": "Free training + ₹8,000 stipend",
+      "eligibility_criteria": {
+        "age": {
+          "min": 15,
+          "max": 45
+        },
+        "income": {
+          "max_annual": 200000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["unemployed", "student"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "Free",
+      "url": "https://www.skillindia.gov.in",
+      "documents": ["Aadhaar", "Educational certificates", "Bank account"],
+      "benefits": ["Free training", "Placement assistance", "Certification"],
+      "contact": "1800-123-9626"
+    },
+    {
+      "id": "cgtmse",
+      "name": "Credit Guarantee Trust for Micro and Small Enterprises",
+      "category": "msme",
+      "target_group": "micro_small_enterprises",
+      "loan_range": "₹10,000 - ₹2,00,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["manufacturing", "service"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "Bank rate + margin",
+      "url": "https://www.cgtmse.in",
+      "documents": ["Aadhaar", "PAN", "Business registration", "Financial statements"],
+      "benefits": ["Credit guarantee", "No collateral", "Easy approval"],
+      "contact": "1800-425-1111"
+    },
+    {
+      "id": "annapurna_scheme",
+      "name": "Annapurna Scheme",
+      "category": "food_catering",
+      "target_group": "women_food_entrepreneurs",
+      "loan_range": "₹50,000 - ₹50,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 55
+        },
+        "income": {
+          "max_annual": 150000,
+          "currency": "INR"
+        },
+        "gender": "female",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["food_catering"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "5% (subsidized)",
+      "url": "https://www.sidbi.in",
+      "documents": ["Aadhaar", "PAN", "Food license", "Training certificate"],
+      "benefits": ["Low interest", "Training support", "Equipment subsidy"],
+      "contact": "1800-022-4474"
+    },
+    {
+      "id": "pm_employment_generation",
+      "name": "Prime Minister's Employment Generation Programme",
+      "category": "employment",
+      "target_group": "unemployed_youth",
+      "loan_range": "₹2,00,000 - ₹25,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["manufacturing", "service"],
+        "collateral_required": false,
+        "existing_loans": "not_allowed"
+      },
+      "interest_rate": "Bank rate + 1%",
+      "url": "https://www.kviconline.gov.in",
+      "documents": ["Aadhaar", "PAN", "Educational certificates", "Project report"],
+      "benefits": ["Margin money subsidy", "Training", "Marketing support"],
+      "contact": "1800-425-1111"
+    },
+    {
+      "id": "national_livestock_mission",
+      "name": "National Livestock Mission",
+      "category": "livestock",
+      "target_group": "livestock_farmers",
+      "loan_range": "₹1,00,000 - ₹10,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 60
+        },
+        "income": {
+          "max_annual": 300000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "rural",
+          "states": ["all"]
+        },
+        "business_type": ["livestock"],
+        "collateral_required": true,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "6-8%",
+      "url": "https://dahd.nic.in",
+      "documents": ["Aadhaar", "Land documents", "Veterinary certificate", "Bank statements"],
+      "benefits": ["Subsidy on animals", "Insurance coverage", "Technical support"],
+      "contact": "011-23070542"
+    },
+    {
+      "id": "atal_pension_yojana",
+      "name": "Atal Pension Yojana",
+      "category": "pension",
+      "target_group": "unorganized_sector",
+      "loan_range": "₹1,000 - ₹5,000 monthly pension",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 40
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["employed", "self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "8-9% returns",
+      "url": "https://www.npscra.nsdl.co.in",
+      "documents": ["Aadhaar", "Bank account", "Nominee details"],
+      "benefits": ["Government co-contribution", "Guaranteed pension", "Tax benefits"],
+      "contact": "1800-222-080"
+    },
+    {
+      "id": "pm_fasal_bima",
+      "name": "Pradhan Mantri Fasal Bima Yojana",
+      "category": "crop_insurance",
+      "target_group": "farmers",
+      "loan_range": "Crop insurance coverage",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "rural",
+          "states": ["all"]
+        },
+        "business_type": ["agriculture"],
+        "collateral_required": false,
+        "existing_loans": "allowed",
+        "land_ownership": true
+      },
+      "interest_rate": "Subsidized premium",
+      "url": "https://pmfby.gov.in",
+      "documents": ["Aadhaar", "Land records", "Sowing certificate", "Bank account"],
+      "benefits": ["Crop loss coverage", "Low premium", "Quick settlement"],
+      "contact": "1800-200-7710"
+    },
+    {
+      "id": "deen_dayal_upadhyaya",
+      "name": "Deen Dayal Upadhyaya Grameen Kaushalya Yojana",
+      "category": "rural_skill_development",
+      "target_group": "rural_youth",
+      "loan_range": "Free training + placement",
+      "eligibility_criteria": {
+        "age": {
+          "min": 15,
+          "max": 35
+        },
+        "income": {
+          "max_annual": 100000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["unemployed"],
+        "location": {
+          "type": "rural",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "Free",
+      "url": "https://ddugky.gov.in",
+      "documents": ["Aadhaar", "Income certificate", "Educational documents"],
+      "benefits": ["Free training", "Placement guarantee", "Post-placement support"],
+      "contact": "1800-123-9626"
+    },
+    {
+      "id": "national_rural_livelihood",
+      "name": "National Rural Livelihood Mission",
+      "category": "rural_development",
+      "target_group": "rural_poor",
+      "loan_range": "₹1,00,000 - ₹10,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 59
+        },
+        "income": {
+          "max_annual": 120000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["unemployed", "self_employed"],
+        "location": {
+          "type": "rural",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "4-7%",
+      "url": "https://aajeevika.gov.in",
+      "documents": ["Aadhaar", "BPL certificate", "SHG membership", "Bank account"],
+      "benefits": ["Interest subvention", "Skill training", "Market linkage"],
+      "contact": "1800-11-0001"
+    },
+    {
+      "id": "technology_upgradation",
+      "name": "Technology Upgradation Fund Scheme",
+      "category": "textile",
+      "target_group": "textile_entrepreneurs",
+      "loan_range": "₹10,00,000 - ₹30,00,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 21,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["textile", "manufacturing"],
+        "collateral_required": true,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "5% (subsidized)",
+      "url": "https://www.texmin.nic.in",
+      "documents": ["Aadhaar", "PAN", "Business registration", "Project report"],
+      "benefits": ["Interest subsidy", "Technology upgrade", "Export promotion"],
+      "contact": "011-23061014"
+    },
+    {
+      "id": "venture_capital_assistance",
+      "name": "Venture Capital Assistance Scheme",
+      "category": "technology_startup",
+      "target_group": "tech_entrepreneurs",
+      "loan_range": "₹50,00,000 - ₹15,00,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 21,
+          "max": 50
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["technology", "innovation"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "0% (equity participation)",
+      "url": "https://www.sidbi.in",
+      "documents": ["Aadhaar", "PAN", "Business plan", "Technical feasibility"],
+      "benefits": ["Equity funding", "Mentorship", "No interest burden"],
+      "contact": "1800-022-4474"
+    },
+    {
+      "id": "women_entrepreneurship",
+      "name": "Women Entrepreneurship Platform",
+      "category": "women_business",
+      "target_group": "women_entrepreneurs",
+      "loan_range": "₹5,00,000 - ₹1,00,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 55
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "female",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "6-9%",
+      "url": "https://www.niti.gov.in",
+      "documents": ["Aadhaar", "PAN", "Business plan", "Educational certificates"],
+      "benefits": ["Mentorship", "Networking", "Market access"],
+      "contact": "011-23096666"
+    },
+    {
+      "id": "solar_rooftop",
+      "name": "Solar Rooftop Subsidy Scheme",
+      "category": "renewable_energy",
+      "target_group": "homeowners",
+      "loan_range": "₹1,00,000 - ₹10,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["employed", "self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed",
+        "property_ownership": true
+      },
+      "interest_rate": "6-8% with subsidy",
+      "url": "https://solarrooftop.gov.in",
+      "documents": ["Aadhaar", "Property documents", "Electricity bill", "Bank account"],
+      "benefits": ["40% subsidy", "Net metering", "Reduced electricity bills"],
+      "contact": "1800-180-3333"
+    },
+    {
+      "id": "fisheries_development",
+      "name": "Blue Revolution - Fisheries Development",
+      "category": "fisheries",
+      "target_group": "fish_farmers",
+      "loan_range": "₹2,00,000 - ₹20,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 60
+        },
+        "income": {
+          "max_annual": 500000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["fisheries", "aquaculture"],
+        "collateral_required": true,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "4-7%",
+      "url": "https://dof.gov.in",
+      "documents": ["Aadhaar", "Land/water body documents", "Technical plan", "Bank statements"],
+      "benefits": ["Subsidy on equipment", "Training", "Insurance coverage"],
+      "contact": "011-20023192"
+    },
+    {
+      "id": "handicrafts_development",
+      "name": "Handicrafts Development Scheme",
+      "category": "handicrafts",
+      "target_group": "artisans",
+      "loan_range": "₹50,000 - ₹5,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 55
+        },
+        "income": {
+          "max_annual": 200000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["handicrafts", "artisan"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "5-8%",
+      "url": "https://handicrafts.nic.in",
+      "documents": ["Aadhaar", "Artisan certificate", "Product samples", "Bank account"],
+      "benefits": ["Design support", "Marketing assistance", "Exhibition participation"],
+      "contact": "011-23061064"
+    },
+    {
+      "id": "food_processing",
+      "name": "Food Processing Scheme",
+      "category": "food_processing",
+      "target_group": "food_entrepreneurs",
+      "loan_range": "₹5,00,000 - ₹50,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["food_processing"],
+        "collateral_required": true,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "6-9%",
+      "url": "https://www.mofpi.nic.in",
+      "documents": ["Aadhaar", "PAN", "FSSAI license", "Project report"],
+      "benefits": ["Capital subsidy", "Technology support", "Market linkage"],
+      "contact": "011-26406557"
+    },
+    {
+      "id": "tribal_development",
+      "name": "Tribal Sub Plan",
+      "category": "tribal_development",
+      "target_group": "tribal_entrepreneurs",
+      "loan_range": "₹1,00,000 - ₹25,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": 300000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["st"],
+        "employment_status": ["self_employed", "unemployed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "4-6%",
+      "url": "https://tribal.nic.in",
+      "documents": ["Aadhaar", "Tribal certificate", "Income certificate", "Project plan"],
+      "benefits": ["Higher subsidy", "Skill training", "Marketing support"],
+      "contact": "011-23387570"
+    },
+    {
+      "id": "leather_development",
+      "name": "Leather Sector Development Scheme",
+      "category": "leather",
+      "target_group": "leather_entrepreneurs",
+      "loan_range": "₹10,00,000 - ₹1,00,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 21,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["leather", "footwear"],
+        "collateral_required": true,
+        "existing_loans": "allowed"
+      },
+      "interest_rate": "7-10%",
+      "url": "https://leatherindia.org",
+      "documents": ["Aadhaar", "PAN", "Business registration", "Technical feasibility"],
+      "benefits": ["Technology upgrade", "Export promotion", "Skill development"],
+      "contact": "011-24648849"
+    },
+    {
+      "id": "digital_india_land",
+      "name": "Digital India Land Records",
+      "category": "digital_services",
+      "target_group": "land_owners",
+      "loan_range": "Free service",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": null
+        },
+        "income": {
+          "max_annual": null,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["any"],
+        "location": {
+          "type": "both",
+          "states": ["all"]
+        },
+        "business_type": ["any"],
+        "collateral_required": false,
+        "existing_loans": "allowed",
+        "land_ownership": true
+      },
+      "interest_rate": "Free",
+      "url": "https://digitalindia.gov.in",
+      "documents": ["Aadhaar", "Land documents"],
+      "benefits": ["Digital land records", "Easy verification", "Reduced corruption"],
+      "contact": "1800-233-1111"
+    },
+    {
+      "id": "rubber_development",
+      "name": "Rubber Plantation Development Scheme",
+      "category": "plantation",
+      "target_group": "rubber_farmers",
+      "loan_range": "₹3,00,000 - ₹15,00,000",
+      "eligibility_criteria": {
+        "age": {
+          "min": 18,
+          "max": 65
+        },
+        "income": {
+          "max_annual": 400000,
+          "currency": "INR"
+        },
+        "gender": "any",
+        "caste": ["general", "obc", "sc", "st"],
+        "employment_status": ["self_employed"],
+        "location": {
+          "type": "rural",
+          "states": ["kerala", "karnataka", "tamil_nadu", "assam"]
+        },
+        "business_type": ["plantation", "agriculture"],
+        "collateral_required": true,
+        "existing_loans": "allowed",
+        "land_ownership": true
+      },
+      "interest_rate": "4-7%",
+      "url": "https://rubberboard.org.in",
+      "documents": ["Aadhaar", "Land documents", "Soil test report", "Bank statements"],
+      "benefits": ["Planting subsidy", "Technical support", "Price stabilization"],
+      "contact": "0484-2353311"
+    }
+  ]
+}

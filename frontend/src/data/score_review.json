@@ -1,0 +1,49 @@
+
+{
+  "credit_attributes": [
+    {
+      "id": "payment_history",
+      "label": "Payment History",
+      "current_score": 4,
+      "description": "Your record of making payments on time",
+      "weight": 0.35
+    },
+    {
+      "id": "credit_utilization",
+      "label": "Credit Utilization",
+      "current_score": 3,
+      "description": "Percentage of available credit being used",
+      "weight": 0.30
+    },
+    {
+      "id": "credit_length",
+      "label": "Credit History Length",
+      "current_score": 2,
+      "description": "How long your credit accounts have been open",
+      "weight": 0.15
+    },
+    {
+      "id": "credit_mix",
+      "label": "Credit Mix",
+      "current_score": 3,
+      "description": "Variety of credit account types",
+      "weight": 0.10
+    },
+    {
+      "id": "new_credit",
+      "label": "New Credit",
+      "current_score": 5,
+      "description": "Recent credit inquiries and new accounts",
+      "weight": 0.10
+    }
+  ],
+  "spending_categories": [
+    {"name": "Housing", "amount": 1200, "color": "#8B5CF6"},
+    {"name": "Food", "amount": 600, "color": "#06B6D4"},
+    {"name": "Transportation", "amount": 400, "color": "#10B981"},
+    {"name": "Entertainment", "amount": 300, "color": "#F59E0B"},
+    {"name": "Healthcare", "amount": 200, "color": "#EF4444"},
+    {"name": "Shopping", "amount": 350, "color": "#EC4899"},
+    {"name": "Others", "amount": 250, "color": "#6B7280"}
+  ]
+}

@@ -1,0 +1,37 @@
+
+{
+  "government_schemes": [
+    {
+      "id": "pmjdy",
+      "name": "PM Jan Dhan Yojana",
+      "link": "https://pmjdy.gov.in/",
+      "description": "Financial inclusion program for banking services",
+      "eligibility": "All Indian citizens",
+      "benefits": ["Zero balance account", "Overdraft facility", "Insurance coverage"]
+    },
+    {
+      "id": "pmmy",
+      "name": "PM Mudra Yojana",
+      "link": "https://mudra.org.in/",
+      "description": "Micro-finance scheme for small businesses",
+      "eligibility": "Small business owners, entrepreneurs",
+      "benefits": ["Loans up to ₹10 lakhs", "No collateral required", "Flexible repayment"]
+    },
+    {
+      "id": "apy",
+      "name": "Atal Pension Yojana",
+      "link": "https://npscra.nsdl.co.in/",
+      "description": "Pension scheme for unorganized sector",
+      "eligibility": "Age 18-40 years, unorganized sector workers",
+      "benefits": ["Guaranteed pension", "Government co-contribution", "Tax benefits"]
+    },
+    {
+      "id": "pmsby",
+      "name": "PM Suraksha Bima Yojana",
+      "link": "https://jansuraksha.gov.in/",
+      "description": "Accident insurance scheme",
+      "eligibility": "Age 18-70 years with bank account",
+      "benefits": ["₹2 lakh coverage", "Annual premium ₹12", "Easy enrollment"]
+    }
+  ]
+}
